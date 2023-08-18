@@ -25,29 +25,29 @@ public class Main_G5_13549_숨바꼭질3 {
 	}
 
 	private static void go() {
-		Queue<myPos> queue = new ArrayDeque<>();
-		queue.offer(new myPos(N, 0));
+		Queue<mmyPos> queue = new ArrayDeque<>();
+		queue.offer(new mmyPos(N, 0));
 		visited[N] = true;
 
 		while (!queue.isEmpty()) {
-			myPos cur = queue.poll();
+			mmyPos cur = queue.poll();
 
 			if (cur.x == K) {
 				min = Math.min(min, cur.time);
 			}
 
 			if (cur.x * 2 <= 100000 && !visited[cur.x * 2]) {
-				queue.offer(new myPos(cur.x * 2, cur.time));
+				queue.offer(new mmyPos(cur.x * 2, cur.time));
 				visited[cur.x * 2] = true;
 			}
 			
 			if (cur.x - 1 >= 0 && !visited[cur.x - 1]) {
-				queue.offer(new myPos(cur.x - 1, cur.time + 1));
+				queue.offer(new mmyPos(cur.x - 1, cur.time + 1));
 				visited[cur.x - 1] = true;
 			}
 
 			if (cur.x + 1 <= 100000 && !visited[cur.x + 1]) {
-				queue.offer(new myPos(cur.x + 1, cur.time + 1));
+				queue.offer(new mmyPos(cur.x + 1, cur.time + 1));
 				visited[cur.x + 1] = true;
 			}
 		}
@@ -55,11 +55,11 @@ public class Main_G5_13549_숨바꼭질3 {
 
 }
 
-class myPos {
+class mmyPos {
 	int x;
 	int time;
 
-	myPos(int x, int time) {
+	mmyPos(int x, int time) {
 		this.x = x;
 		this.time = time;
 	}
