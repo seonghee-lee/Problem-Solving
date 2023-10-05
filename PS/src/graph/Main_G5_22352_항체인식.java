@@ -2,7 +2,10 @@ package graph;
 
 import java.util.*;
 import java.io.*;
-
+/**
+ * 확인해야 하는 항목: 동일인접된 것들로 퍼져 나간 게 맞는지(result 만들어서 after랑 비교해서 확인),
+ * 				1개의 요소에 대해서만 퍼져 나간게 맞는지(change 개수로 확인)
+ */
 public class Main_G5_22352_항체인식 {
 	static int N, M;
 	static int[][] before, after, result;
